@@ -1,0 +1,2 @@
+d:/someFile.txt
+exit
