@@ -4,7 +4,7 @@ public class FoundRomeNum {
     private static int result = 0;
     private static int a = 0;
     private static int b = 0;
-    static String[] rome = new String[] {"","I","II","III","IV","V","VI","VII","VIII","IX","X",
+    static String[] rome = new String[] {"","I","II","III","IV","V","VI","VII","VIII","IX","X",           //Roman dictionary
                                          "XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX",
                                          "XXI","XXII","XXIII","XXIV","XXV","XXVI","XXVII","XXVIII","XXIX","XXX",
                                          "XXXI","XXXII","XXXIII","XXXIV","XXXV","XXXVI","XXXVII","XXXVIII","XXXIX","XL",
@@ -15,20 +15,20 @@ public class FoundRomeNum {
                                          "LXXXI","LXXXII","LXXXIII","LXXXIV","LXXXV","LXXXVI","LXXXVII","LXXXVIII","LXXXIX","XC",
                                          "XCI","XCII","XCIII","XCIV","XCV","XCVI","XCVII","XCVIII","XCIX","C"};
     public static String getFoundRomeNum() {
-            while (true) {
+            while (true) {      //works until it finds a similar Roman numeral
                 if (rome[a].equals(FoundNum.getFoundNum().get(0))) {
                     break;
                 }
                 a++;
             }
-            while (true) {
+            while (true) {      //works until it finds a similar Roman numeral
                 if (rome[b].equals(FoundNum.getFoundNum().get(2))) {
                     break;
                 }
                 b++;
             }
             try {
-                if (FoundNum.getFoundNum().contains("+")) {
+                if (FoundNum.getFoundNum().contains("+")) {      //check what action the string does
                     result = a + b;
                 } else if (FoundNum.getFoundNum().contains("-")) {
                     result = a - b;
@@ -39,17 +39,17 @@ public class FoundRomeNum {
                 } else {
                     throw new Exception("no mathematical action");
                 }
-                if(a > 10 || b > 10) {
+                if(a > 10 || b > 10) {       //checking that the number is not more than 10
                     throw new Exception("number greater than 10");
                 }
-                if (FoundNum.getFoundNum().size() > 3) {
+                if (FoundNum.getFoundNum().size() > 3) {     //checking that there are no more than 2 numbers and one action
                     throw new Exception("2 numbers and 1 action are accepted for entry");
                 }
             } catch (Exception e) {
                 System.out.println(e);
                 System.exit(0);
             }
-
+        System.out.println("Output:");
         return rome[result];
     }
 }
